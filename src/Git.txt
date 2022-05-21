@@ -1,0 +1,9 @@
+Version Control (VCS)
+
+Problems :
+1. Sharing of the code is difficult.
+2. Tracking the changes is difficult.
+3. Conflict while merging same source file.
+4. Revert the source not possible.
+5. Recovering destroyed source is not possible.
+
