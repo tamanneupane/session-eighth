@@ -8,5 +8,13 @@ public class School {
 
         Teacher teacher = new Teacher();
         teacher.setName("asdasd");
+
+
+        Person person1 = new Student();
+        Person person2 = new Teacher();
+       
+
+
+
     }
 }
