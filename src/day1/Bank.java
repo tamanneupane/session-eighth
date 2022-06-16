@@ -1,9 +1,10 @@
 package day1;
 
+import java.math.BigDecimal;
+
 public class Bank {
 
     public static void main(String[] args) {
-        int a = 2;
 
         Account account1 = new Account();
 
@@ -17,7 +18,7 @@ public class Bank {
         account1.setAccountType(AccountType.SALARY);
 
 //        account1.accountBalance = 50000.5f;
-        account1.setAccountBalance(500f);
+        account1.setAccountBalance(BigDecimal.valueOf(500));
 
 //        account1.bankName = "GBIME";
 
@@ -32,7 +33,7 @@ public class Bank {
 //        account2.accountNumber = "987654321";
         account2.setAccountNumber("987654321");
 
-        account2.setAccountBalance(200f);
+        account2.setAccountBalance(BigDecimal.valueOf(200));
 
 //        account2.ssn = "2222222222";
         account2.setSsn("2222222222");
@@ -44,7 +45,7 @@ public class Bank {
 //        System.out.println(account2.getAccountNumber());
 
         //Transfer Balance 200 from account 1 to account 2
-        float balanceToBeTransferred = 200;
+        BigDecimal balanceToBeTransferred = BigDecimal.valueOf(200);
         account1.transferBalance(account1, account2, balanceToBeTransferred);
     }
 }

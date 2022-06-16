@@ -1,5 +1,7 @@
 package day1;
 
+import java.math.BigDecimal;
+
 public class Account {
 
     // States
@@ -18,7 +20,7 @@ public class Account {
 
     // account balance (Float)
 
-    private float accountBalance;
+    private BigDecimal accountBalance;
 
     // bank name (String)
 
@@ -54,11 +56,11 @@ public class Account {
         this.accountType = accountType;
     }
 
-    public float getAccountBalance() {
+    public BigDecimal getAccountBalance() {
         return accountBalance;
     }
 
-    public void setAccountBalance(float accountBalance) {
+    public void setAccountBalance(BigDecimal accountBalance) {
         this.accountBalance = accountBalance;
     }
 
@@ -85,12 +87,14 @@ public class Account {
     // delete account
     // withdraw
     public void withdraw(){
-        accountBalance = 5000;
+        accountBalance = BigDecimal.valueOf(5000);
     }
     // balance transfer
-    public void transferBalance(Account from, Account to, float balanceToBeTransferred){
-        from.setAccountBalance(from.getAccountBalance() - balanceToBeTransferred);
-        to.setAccountBalance(to.getAccountBalance() + balanceToBeTransferred);
+    public void transferBalance(Account from, Account to, BigDecimal balanceToBeTransferred){
+//        from.setAccountBalance(from.getAccountBalance() - balanceToBeTransferred);
+        from.setAccountBalance(from.getAccountBalance().subtract(balanceToBeTransferred));
+//        to.setAccountBalance(to.getAccountBalance() + balanceToBeTransferred);
+        to.setAccountBalance(to.getAccountBalance().add(balanceToBeTransferred));
 
         System.out.println("=============== New Balance =====================");
         System.out.println(from.getAccountBalance());

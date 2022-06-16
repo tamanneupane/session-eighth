@@ -6,26 +6,39 @@ import java.util.Objects;
 //Model, POJO
 public class Employee {
 
-    private int id; // mand
+    private int id; // mandatory
     private String name; // mand
-    private String salary; // mand
+    private float salary; // mand
     private LocalDate hireDate; // mand
 
     private Address address; //Optional
 
-    private Employee(){} // Default Constructor
+    public static float salaryPercent = 0.1f;
+
+//    public Employee(){} // Default Constructor
+
 
     //parameterized Constructor
-    public Employee(int id,String name, String salary, LocalDate hireDate){
+    public Employee(int id,String name, float salary, LocalDate hireDate){
         this.id = id;
         this.name = name;
         this.salary = salary;
-        this.hireDate = Objects.requireNonNullElse(hireDate, LocalDate.now());
+//        this.hireDate = Objects.requireNonNullElse(hireDate, LocalDate.now());
     }
 
-    public Employee(int id,String name, String salary, LocalDate hireDate, Address address){
+    public Employee(int id,String name, float salary, LocalDate hireDate, Address address){
         this(id, name, salary, hireDate);
         this.address = address;
+    }
+
+    // this = employee1 || employee2
+    public void increaseSalary(){
+        float increasedSalary = this.salary + this.salary * salaryPercent;
+        this.salary = increasedSalary;
+    }
+
+    public static float getSalaryPercent(){
+        return salaryPercent;
     }
 
     @Override
@@ -38,4 +51,6 @@ public class Employee {
                 ", address=" + address +
                 '}';
     }
+
+
 }

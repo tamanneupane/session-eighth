@@ -3,11 +3,13 @@ package day3;
 public class PolymorphismTest {
 
     public static void main(String[] args) {
-        float add1 = add(2,5);
+        int x = 2;
+        int y = 5;
+        float add1 = add(x,y);
         System.out.println(add1);
         double add2 = add(2f, 3f);
         System.out.println(add2);
-        double add3 = add(2.0, 3.0);
+        double add3 = add((float) 2.0, (float) 3.0);
         System.out.println(add3);
     }
 
@@ -16,7 +18,7 @@ public class PolymorphismTest {
         return temp;
     }
 
-    public static double add(double a, double b){
+    public static double add(float a, float b){
         double temp = a + b;
         return temp;
     }
