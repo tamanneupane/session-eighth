@@ -17,9 +17,17 @@ public class Office {
 //        executive.getName();
 
         //PolyMorphism
-        Employee employee = new Employee("ABC", 28, LocalDate.now(), 5000);
-        Employee manager = new Manager("DEF", 28, LocalDate.now(), 8000, 1000);
-        System.out.println(employee.getSalary());
-        System.out.println(manager.getSalary());
+        Object employee = new Employee("ABC", 28, LocalDate.now(), 5000);
+        Object manager = new Manager("DEF", 28, LocalDate.now(), 8000, 1000);
+//        System.out.println(employee.getSalary());
+//        System.out.println(manager.getSalary());
+
+        if(employee instanceof Manager){
+            ((Manager)employee).fireEmployee();
+        }
+
+
+        Cleaner cleaner = new Cleaner("Cleaner1", 28, LocalDate.now(), 8000);
+//        cleaner.fireEmployee();
     }
 }

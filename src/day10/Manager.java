@@ -2,7 +2,7 @@ package day10;
 
 import java.time.LocalDate;
 
-public class Manager extends Employee{
+public sealed class Manager extends Employee permits Executive{
 
     private float bonus;
 
@@ -23,6 +23,10 @@ public class Manager extends Employee{
     public float getSalary(){
         float totalSalary = super.getSalary() + this.bonus;
         return  totalSalary;
+    }
+
+    public void fireEmployee(){
+
     }
 
 
